@@ -35,7 +35,7 @@ if (process.env.NODE_ENV === 'production') {
     )
   }else{
 app.get('/',  (req, res) => {
-    res.json('Hello to my app')
+    res.send('Hello to my app')
 })
   }
 // Sign up to the Database
@@ -95,7 +95,7 @@ app.post('/login', async (req, res) => {
 
         if (user && correctPassword) {
             const token = jwt.sign(user, email, {
-                expiresIn: 60 * 24
+                expiresIn: '30d',
             })
             res.status(201).json({token, userId: user.user_id})
         }
