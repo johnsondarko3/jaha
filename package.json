@@ -20,10 +20,8 @@
   "license": "MIT",
   "scripts": {
     "start": "node index",
-    "server": "nodemon index",
+    "server": "nodemon index"
     
-    "dev": "concurrently \"npm run index\" \"npm run client\"",
-    "client": "yarn start --prefix client"
-    
+   
   }
 }
