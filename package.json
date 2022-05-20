@@ -21,9 +21,9 @@
   "scripts": {
     "start": "node index",
     "server": "nodemon index",
-    "build": "react-scripts build",
+    
     "dev": "concurrently \"npm run index\" \"npm run client\"",
     "client": "yarn start --prefix client",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn install --prefix client && yarn run build --prefix client"
+    
   }
 }
