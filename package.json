@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "react-scripts": "5.0.1"
+  },
+  "name": "tinder-clone-main",
+  "version": "1.0.0",
+  "description": "daterush",
+  "main": "index.js",
+  "author": "johnson",
+  "license": "MIT",
+  "scripts": {
+    "start": "node backend/server",
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  
+
+  }
+}
