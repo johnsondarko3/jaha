@@ -14,8 +14,8 @@
   "author": "johnson",
   "license": "MIT",
   "scripts": {
-    "start": "node backend/server",
-    "server": "nodemon backend/server",
+    "start": "node backend/index",
+    "server": "nodemon backend/index",
     "client": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import": "node backend/seeder",
