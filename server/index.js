@@ -1,4 +1,4 @@
-const PORT = 8000
+
 const express = require('express')
 const {MongoClient} = require('mongodb')
 const {v4: uuidv4} = require('uuid')
@@ -250,5 +250,11 @@ app.post('/message', async (req, res) => {
     }
 })
 
+const PORT = process.env.PORT || 5000
 
-app.listen(PORT, () => console.log('server running on PORT ' + PORT))
+app.listen(
+  PORT,
+  console.log(
+    `Server running in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold
+  )
+)
