@@ -35,7 +35,7 @@ if (process.env.NODE_ENV === 'production') {
     )
   }else{
 app.get('/',  (req, res) => {
-    res.send('Hello to my app')
+    res.json('Hello to my app')
 })
   }
 // Sign up to the Database
