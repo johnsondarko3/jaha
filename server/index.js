@@ -27,17 +27,7 @@ app.use(cors())
 // Default
 
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '/client/build')))
-  
-    app.get('*', (req, res) =>
-      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
-    )
-  }else{
-app.get('/',  (req, res) => {
-    res.json('Hello to my app')
-})
-  }
+
 // Sign up to the Database
 app.post('/signup', async (req, res) => {
     const client = new MongoClient(uri)
@@ -273,7 +263,7 @@ if(process.env.NODE_ENV === "production") {
     app.use(express.static("build"));
   
   app.get('*', (req, res) => {
-     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+     res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
   });
   
   }
