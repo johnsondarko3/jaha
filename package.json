@@ -23,7 +23,7 @@
     "server": "nodemon index",
     
     "dev": "concurrently \"npm run index\" \"npm run client\"",
-    "client": "yarn start --prefix client",
+    "client": "yarn start --prefix client"
     
   }
 }
