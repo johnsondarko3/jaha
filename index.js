@@ -20,15 +20,11 @@ const uri = process.env.URI
 
 const app = express()
 
-if (process.env.NODE_ENV === 'development') {
-  app.use(morgan('dev'))
-}
+
 
 app.use(express.json())
 app.use(cors())
 // Default
-const __dirname = path.resolve()
-app.use('/userController', express.static(path.join(__dirname, '/userController')))
 
 
 if (process.env.NODE_ENV === 'production') {
