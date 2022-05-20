@@ -14,7 +14,7 @@
   "author": "johnson",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js",
+    "start": "node index",
     "build": "react-scripts build",
     "client": "yarn start --prefix client",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn install --prefix client && yarn run build --prefix client",
