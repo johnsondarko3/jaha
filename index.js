@@ -6,18 +6,42 @@ const jwt = require('jsonwebtoken')
 const cors = require('cors')
 const bcrypt = require('bcrypt')
 require('dotenv').config()
+const connectDB = require ('./config/db.js')
+const path = require('path')
+
+dotenv.config()
+connectDB()
 
 const uri = process.env.URI
 
-const app = express()
-app.use(cors())
-app.use(express.json())
 
+
+
+
+const app = express()
+
+if (process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'))
+}
+
+app.use(express.json())
+app.use(cors())
 // Default
+const __dirname = path.resolve()
+app.use('/userController', express.static(path.join(__dirname, '/userController')))
+
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '/client/build')))
+  
+    app.get('*', (req, res) =>
+      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+    )
+  }else{
 app.get('/',  (req, res) => {
     res.json('Hello to my app')
 })
-
+  }
 // Sign up to the Database
 app.post('/signup', async (req, res) => {
     const client = new MongoClient(uri)
